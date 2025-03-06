@@ -110,7 +110,15 @@ while game_running:
             play_again = True
         if play_again:
             again = input("Do you want to play again: ")
-            if again == True:
+            if again == "yes":
+                count = 0;
+                for row in board:
+                    eleCount = -1;
+                    for ele in row:
+                        eleCount += 1;
+                        count += 1;
+                        row[eleCount] = count;
                 game_running = True
-            elif again == False:
+            else:
+                print("Thank you for playing!")
                 game_running = False
